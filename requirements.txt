@@ -2,11 +2,13 @@ sentence-transformers
 langchain
 flask
 pypdf
+streamlit
 faiss-cpu
 python-dotenv
 langchain-pinecone
 langchain_community
 langchain_groq
+langchain_openai
 langchain_experimental
 langchain_huggingface
 langchain_huggingface

@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from langchain_groq import ChatGroq
+from langchain.chat_models import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -26,7 +27,9 @@ docsearch = PineconeVectorStore.from_existing_index(index_name=index_name,embedd
 
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":3})
 
-llm=ChatGroq(model="qwen-2.5-32b")
+#llm=ChatGroq(model="qwen-2.5-32b")
+#llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
+llm=ChatGroq(model="deepseek-r1-distill-llama-70b")
 
 prompt = ChatPromptTemplate.from_messages(
     [
