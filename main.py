@@ -30,9 +30,20 @@ def main():
     st.write("Welcome to the HCO  Q&A chatbot !")
 
     # Sidebar for the API key input
-    model=st.sidebar.selectbox("Model",["ChatOpenAI","ChatGroq"])
+    model=st.sidebar.selectbox("Model",["ChatGroq","ChatOpenAI"])
     st.sidebar.header("API Key Input")
     api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
+    
+    if model=="ChatOpenAI":
+         st.sidebar.markdown("""
+                    ### Need a OPEN API Key? 
+                    If you don't have a OPEN API key, create api key  [ https://openai.com/index/openai-api/] 
+                    """)
+    else:
+          st.sidebar.markdown("""
+                    ### Need a Groq API Key?
+                    If you don't have a Groq API key, create api key[ https://console.groq.com/keys] to get started.
+                    """)
     
     os.environ["PINECONE_API_KEY"] = "pcsk_6d3uNY_NfSiPAVzwopGGrK1RWhw1RFyLu5gWPvXBtS4gHGTr6UAgDTwbgMZ7MWYs99DExZ"
     embeddings = download_hugging_face_embedding()
