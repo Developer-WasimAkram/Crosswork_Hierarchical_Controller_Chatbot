@@ -32,7 +32,7 @@ def main():
     # Sidebar for the API key input
     model=st.sidebar.selectbox("Model",["ChatGroq","ChatOpenAI"])
     st.sidebar.header("API Key Input")
-    api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
+    api_key = st.sidebar.text_input("Enter your  API Key", type="password")
     
     if model=="ChatOpenAI":
          st.sidebar.markdown("""
