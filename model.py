@@ -14,7 +14,7 @@ def get_chatgroq_response(api_key):
     os.environ["GROQ_API_KEY"] = api_key
      
     try:
-        llm=ChatGroq(model="qwen-2.5-32b",temperature=0.5)        
+        llm=ChatGroq(model="gemma2-9b-it")      
         return llm
     except Exception as e:
         return f"Error: {e}"
