@@ -17,7 +17,7 @@ embeddings = download_hugging_face_embedding()
 
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
-index_name = "hcobot"
+index_name = "hco"
 pc.create_index(name=index_name,dimension=384, metric="cosine", spec=ServerlessSpec(
         cloud="aws", region="us-east-1" )) 
 
